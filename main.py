@@ -131,7 +131,7 @@ W = urwid.Pile([W,W2,button])
 
 fill = urwid.Filler(W)
 
-hdr = urwid.Text("背單詞 v.10 type 'q' to quite the program", align='center')
+hdr = urwid.Text("背單詞 v1.0 type 'q' to quite the program", align='center')
 hdr = urwid.AttrMap(hdr,'header')
 Tdr = urwid.Text("What the heck again??", align='center')
 Tdr = urwid.Columns([Tdr])
