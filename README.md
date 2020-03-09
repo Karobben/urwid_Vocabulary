@@ -18,17 +18,17 @@ run
 ```python3 main.py```
 
 <p align='center'>
-<img src="img/Begin.png">
+<img src="img/Begin.jpg">
 </p>
 
 If your Spelling is RIGHT:
 <p align='center'>
-<img src="img/Right.png">
+<img src="img/Right.jpg">
 </p>
 
 If your Spelling is WRONG
 <p align='center'>
-<img src="img/Wrong.png">
+<img src="img/Wrong.jpg">
 </p>
 
 ## how to hack this script:
@@ -46,5 +46,5 @@ cd Needlman
 Rscript Log_graph2.R
 ```
 <p align='center'>
-<img src="img/Graphs.png">
+<img src="img/Graphs.jpg">
 </p>

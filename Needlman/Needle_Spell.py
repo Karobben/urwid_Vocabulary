@@ -273,9 +273,9 @@ def main(Seq,DB,Num):
     Result1 =Seq
     Result2 =""
     ResultT ="False"
+    Seq = Seq.lower().strip()
+    Seq = Seq.translate(remove_digits)
     if Seq != "":
-        Seq = Seq.lower().strip()
-        Seq = Seq.translate(remove_digits)
         F_log = open(sys.path[0]+"/Needlman/En.log","a")
         if Seq in DB:
             Num +=1
