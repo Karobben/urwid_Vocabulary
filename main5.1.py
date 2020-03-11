@@ -19,31 +19,17 @@ def BigTxt(TXT):
 
 def Fresh_Qbox(Result1, Result2,ResultT,Num,):
     Dic_widge.contents[0] = (urwid.Text(Dictionary.Dic_WB(Result2)), Dic_widge.options())
-    hdr_txt = urwid.Text("背單詞 v1.0 type 'q' to quite the program "+str(N_word_ToDay()), align='center')
     if ResultT == "True":
         Tdr_txt = urwid.Text(('banner',"YOUR ARE RIGHT!!! "+str(Num)),align='center')
         Tdr_pattern = 'Green_BG'
     else:
         Tdr_txt = urwid.Text(('banner',"Your are wrong... Please Check again"),align='center')
         Tdr_pattern = 'Green_RG'
-    hdr.contents[0] = ( urwid.AttrWrap(hdr_txt,'header'), hdr.options())
     Tdr.contents[0] = ( urwid.AttrWrap(Tdr_txt,Tdr_pattern), Tdr.options())
     Head_w1.contents[0] = (urwid.AttrWrap(BigTxt(Result1),Tdr_pattern), Head_w1.options())
     Head_w2.contents[0] = (urwid.AttrWrap(BigTxt(Result2),Tdr_pattern), Head_w2.options())
     #Head_w1.contents[0] = (BigTxt(Result1), Head_w1.options())
     #Head_w2.contents[0] = (BigTxt(Result2), Head_w2.options())
-def N_word_ToDay():
-    '''
-    This function is for grasping the times of input today from the records of En.log
-    '''
-    Year = time.ctime().split(' ')[-1]
-    Date = " ".join(time.ctime().split(' ')[:3])
-    F = open(sys.path[0] +'/Needlman/En.log',"r").readlines()
-    Num = [i for i,x in enumerate(F) if x.find(Date)!=-1]
-    F2 = [F[i] for i in Num]
-    Num = [i for i,x in enumerate(F2) if x.find(Year)!=-1]
-    F2 = [F2[i] for i in Num]
-    return len(F2)
 
 class QuestionBox(urwid.Padding):
     def keypress(self, size, key):
@@ -145,9 +131,8 @@ W = urwid.Pile([W,W2,button])
 
 fill = urwid.Filler(W)
 
-hdr = urwid.Text("背單詞 v1.01 type 'q' to quite the program "+str(N_word_ToDay()), align='center')
-#hdr = urwid.AttrMap(urwid.Columns([hdr]),'header')
-hdr = urwid.Columns([hdr])
+hdr = urwid.Text("背單詞 v1.0 type 'q' to quite the program", align='center')
+hdr = urwid.AttrMap(hdr,'header')
 Tdr = urwid.Text("What the heck again??", align='center')
 Tdr = urwid.Columns([Tdr])
 fill = urwid.Frame(header=hdr,body=fill, footer=Tdr)
